@@ -46,10 +46,17 @@ resource "aws_s3_object" "error" {
   content_type = "text/html"
 }
 
-resource "aws_s3_object" "profile" {
+resource "aws_s3_object" "apple" {
   bucket = aws_s3_bucket.mybucket.id
-  key = "profile.png"
-  source = "profile.png"
+  key = "apple.png"
+  source = "apple.png"
+  acl = "public-read"
+}
+
+resource "aws_s3_object" "tomato" {
+  bucket = aws_s3_bucket.mybucket.id
+  key = "tomato.png"
+  source = "tomato.png"
   acl = "public-read"
 }
 
